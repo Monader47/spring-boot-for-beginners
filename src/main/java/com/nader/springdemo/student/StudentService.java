@@ -4,26 +4,16 @@ import java.util.*;
 
 import org.springframework.stereotype.Service;
 
-@Service
-public class StudentService {
-    public List<Student> findAll() {
-        return List.of(
-                new Student(
-                        "Mohamed",
-                        "Nader",
-                        LocalDate.now(),
-                        "m@123",
-                        33
-                ),
-                new Student(
-                        "Mohamed",
-                        "ali",
-                        LocalDate.now(),
-                        "maliiiiiiii@123",
-                        3
-                )
-        );
-    }
+public interface StudentService {
+    Student save(Student s);
+    public List<Student> findAll() ;
+    Student findByEmail(String email);
+    void delete(Student s);
+
+
+    Student update(Student s);
+
+
 }
 
 
